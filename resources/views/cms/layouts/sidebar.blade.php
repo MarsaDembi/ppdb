@@ -1,39 +1,34 @@
 <nav class="pc-sidebar">
-        <div class="navbar-wrapper">
-            <div class="m-header flex items-center py-4 px-6 h-header-height">
-                <a href="../dashboard/index.html" class="b-brand flex items-center gap-3">
-                    <!-- ========   Change your logo from here   ============ -->
-                    <img src="{{ asset('asset/cms/images/logo-white.svg') }}" class="img-fluid logo logo-lg" alt="logo" />
-                    <img src="{{ asset('asset/cms/images/favicon.svg') }}" class="img-fluid logo logo-sm" alt="logo" />
-                </a>
-            </div>
-            <div class="navbar-content h-[calc(100vh_-_74px)] py-2.5">
-                <ul class="pc-navbar">
-                     @hasrole('admin')
-                    <li class="pc-item pc-caption">
-                        <label>Navigation</label>
-                    </li>
-                    <li class="pc-item">
-                   
-                    <li class="pc-item">
-                        <a href="{{ route('dashboard.home') }}" class="pc-link">
-                            <span class="pc-micon">
-                                <i data-feather="home"></i>
-                            </span>
-                            <span class="pc-mtext">Dashboard</span>
-                        </a>
-                    </li>
-                    @endhasrole
+    <div class="navbar-wrapper">
+        <div class="m-header flex items-center py-4 px-6 h-header-height">
+            <a href="{{ route('dashboard') }}" class="b-brand flex items-center gap-3">
+                <!-- ========   Change your logo from here   ============ -->
+                {{-- <img src="{{ asset('asset/cms/images/logo-white.svg') }}" class="img-fluid logo logo-lg" alt="logo" />
+                <img src="{{ asset('asset/cms/images/favicon.svg') }}" class="img-fluid logo logo-sm" alt="logo" /> --}}
+                <h4 class="text-white">PKBM Bela Warga</h4>
+            </a>
+        </div>
+        <div class="navbar-content h-[calc(100vh_-_74px)] py-2.5">
+            <ul class="pc-navbar">
 
-                    @hasrole('user')
+                <li class="pc-item {{ Route::is('dashboard') ? 'active' : ''}}">
+                    <a href="{{ route('dashboard') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <i data-feather="home"></i>
+                        </span>
+                        <span class="pc-mtext">Dashboard</span>
+                    </a>
+                </li>
+
+                @hasrole('user')
                     <li class="pc-item pc-caption">
                         <label>Data Peserta</label>
                         <i data-feather="feather"></i>
                     </li>
-                    <li class="pc-item pc-hasmenu">
-                        <a href="../elements/bc_color.html" class="pc-link">
+                    <li class="pc-item pc-hasmenu {{ Route::is('profile.index') ? 'active' : ''}}">
+                        <a href="{{ route('profile.index') }}" class="pc-link">
                             <span class="pc-micon"> <i data-feather="edit"></i></span>
-                            <span class="pc-mtext">profile</span>
+                            <span class="pc-mtext">Profile</span>
                         </a>
                     </li>
                     <li class="pc-item pc-hasmenu">
@@ -48,37 +43,39 @@
                             <span class="pc-mtext">Pengumuman</span>
                         </a>
                     </li>
-                    @endhasrole
+                @endhasrole
 
-                    @hasrole('admin|kepalasekolah')
+                @hasrole('admin|kepalasekolah')
                     <li class="pc-item pc-caption">
                         <label>Laporan</label>
                         <i data-feather="monitor"></i>
                     </li>
-                   
+
                     <li class="pc-item pc-hasmenu">
                         <a href="../pages/login-v1.html" class="pc-link" target="_blank">
                             <span class="pc-micon"> <i data-feather="lock"></i></span>
                             <span class="pc-mtext">Data Peserta</span>
                         </a>
                     </li>
-                     @endhasrole
+                @endhasrole
 
-                    <li class="pc-item pc-caption">
-                        <label>Other</label>
-                        <i data-feather="sidebar"></i>
-                    </li>
-                    
-                    <li class="pc-item">
-                        <a href="../other/sample-page.html" class="pc-link">
+                {{-- <li class="pc-item pc-caption">
+                    <label>Other</label>
+                    <i data-feather="sidebar"></i>
+                </li>
+
+                <li class="pc-item">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="button" class="pc-link" id="logout-btn">
                             <span class="pc-micon">
                                 <i data-feather="sidebar"></i>
                             </span>
-                            <span class="pc-mtext">logout</span>
-                        </a>
-                    </li>
-                
-                </ul>
-            </div>
+                            <span class="pc-mtext">Logout</span>
+                        </button>
+                    </form>
+                </li> --}}
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>

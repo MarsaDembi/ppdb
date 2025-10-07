@@ -4,19 +4,21 @@
 <!-- [Head] start -->
 
 <head>
-    <title>Home | Datta Able Dashboard Template</title>
+    <title>{{ $title }} | PPDB PKBM Bela Warga</title>
     <!-- [Meta] -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description"
-        content="Datta Able is trending dashboard template made using Bootstrap 5 design framework. Datta Able is available in Bootstrap, React, CodeIgniter, Angular,  and .net Technologies." />
-    <meta name="keywords"
-        content="Bootstrap admin template, Dashboard UI Kit, Dashboard Template, Backend Panel, react dashboard, angular dashboard" />
-    <meta name="author" content="CodedThemes" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="MarsaDembi" />
 
     <!-- [Favicon] icon -->
-    <link rel="icon" href="{{ asset('asset/cms/images/favicon.svg') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('asset/images/favicon.svg') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('asset/images/logo/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('asset/images/logo/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('asset/images/logo/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('asset/images/logo/site.webmanifest') }}">
 
     <!-- [Font] Family -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap"
@@ -64,12 +66,15 @@
         </div>
     </div>
     <!-- [ Main Content ] end -->
-    
+
     <!-- [ Footer ] start -->
     @include('cms.layouts.footer')
     <!-- [ Footer ] end -->
 
     <!-- Required Js -->
+    @include('sweetalert::alert')
+    @include('sweetalert2::index')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('asset/cms/js/plugins/simplebar.min.js') }}"></script>
     <script src="{{ asset('asset/cms/js/plugins/popper.min.js') }}"></script>
     <script src="{{ asset('asset/cms/js/icon/custom-icon.js') }}"></script>
@@ -112,7 +117,7 @@
         main_layout_change('vertical');
     </script>
 
-
+    @stack('custom-scripts')
 </body>
 <!-- [Body] end -->
 
