@@ -52,7 +52,7 @@ class User extends Authenticatable
         return $this->hasOne(UserProfile::class, 'user_id');
     }
 
-    public function files()
+    public function file()
     {
         return $this->hasOne(UserFile::class, 'user_id');
     }

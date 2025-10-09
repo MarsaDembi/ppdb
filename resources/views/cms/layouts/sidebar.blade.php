@@ -31,18 +31,13 @@
                             <span class="pc-mtext">Profile</span>
                         </a>
                     </li>
-                    <li class="pc-item pc-hasmenu">
-                        <a href="../elements/bc_typography.html" class="pc-link">
+                    <li class="pc-item pc-hasmenu {{ Route::is('file.index') ? 'active' : ''}}">
+                        <a href="{{ route('file.index') }}" class="pc-link">
                             <span class="pc-micon"> <i data-feather="type"></i></span>
                             <span class="pc-mtext">Persyaratan</span>
                         </a>
                     </li>
-                    <li class="pc-item pc-hasmenu">
-                        <a href="../elements/icon-feather.html" class="pc-link">
-                            <span class="pc-micon"> <i data-feather="feather"></i></span>
-                            <span class="pc-mtext">Pengumuman</span>
-                        </a>
-                    </li>
+            
                 @endhasrole
 
                 @hasrole('admin|kepalasekolah')
@@ -50,7 +45,12 @@
                         <label>Laporan</label>
                         <i data-feather="monitor"></i>
                     </li>
-
+                <li class="pc-item pc-hasmenu">
+                        <a href="" class="nav-link">
+                            <span class="pc-micon"> <i data-feather="lock"></i></span>
+                            <span class="pc-mtext">Calon Peserta</span>
+                        </a>
+                    </li>
                     <li class="pc-item pc-hasmenu">
                         <a href="../pages/login-v1.html" class="pc-link" target="_blank">
                             <span class="pc-micon"> <i data-feather="lock"></i></span>

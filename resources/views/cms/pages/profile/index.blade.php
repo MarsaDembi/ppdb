@@ -1,5 +1,5 @@
-@extends('cms.layouts.main', ['title' => 'Profile'])
 
+@extends('cms.layouts.main', ['title' => 'Profile'])
 @section('content')
     <!-- [ breadcrumb ] start -->
     <div class="page-header">
@@ -226,7 +226,7 @@
                                     <img id="photo-preview"
                                         src="{{ $data->profile->photo ? route('getImage', ['path' => 'profile', 'imageName' => $data->profile->photo]) : '' }}"
                                         alt="Preview Foto"
-                                        style="max-width: 150px; max-height: 150px; {{ $data->profile->photo ? '' : 'display:none;' }}">
+                                        style="max-width: 150px; max-height: 150px; " {{ $data->profile->photo ? '' : ' display:none;' }}">
                                 </div>
                             </div>
                         </div>

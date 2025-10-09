@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserFile extends Model
 {
+   
     protected $fillable = [
         'user_id',
         'family_card',

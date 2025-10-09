@@ -7,8 +7,23 @@
                 <h5>Status Pendaftaran</h5>
             </div>
             <div class="card-body text-center">
-                <h2 class="text-lg font-bold text-green-600">Menunggu Verifikasi</h2>
-                <p class="text-gray-500 mt-2">Admin sedang memeriksa berkas Anda.</p>
+                @php
+                    $status = Auth::user()->status_pendaftaran; // pastikan field ini ada di tabel users
+                @endphp
+
+                @if ($status == 'verifikasi')
+                    <h2 class="text-lg font-bold text-green-600">Menunggu Verifikasi</h2>
+                    <p class="text-gray-500 mt-2">Admin sedang memeriksa berkas Anda.</p>
+                @elseif ($status == 'diterima')
+                    <h2 class="text-lg font-bold text-blue-600">Diterima</h2>
+                    <p class="text-gray-500 mt-2">Selamat, Anda telah diterima!</p>
+                @elseif ($status == 'ditolak')
+                    <h2 class="text-lg font-bold text-red-600">Ditolak</h2>
+                    <p class="text-gray-500 mt-2">Maaf, Anda belum lolos seleksi.</p>
+                @else
+                    <h2 class="text-lg font-bold text-gray-600">Belum Ada Status</h2>
+                    <p class="text-gray-500 mt-2">Status pendaftaran Anda belum ditentukan.</p>
+                @endif
             </div>
         </div>
     </div>
@@ -21,9 +36,9 @@
             </div>
             <div class="card-body">
                 <ul class="list-disc list-inside text-gray-700">
-                    <li><strong>Nama:</strong> Andi Saputra</li>
-                    <li><strong>NISN:</strong> 1234567890</li>
-                    <li><strong>Sekolah Asal:</strong> SMPN 1 Tanjungsari</li>
+                    <li><strong>Nama:</strong> {{ Auth::user()->name }}</li>
+                    <li><strong>NISN:</strong> {{ Auth::user()->nisn }}</li>
+                    <li><strong>Sekolah Asal:</strong> {{ Auth::user()->sekolah_asal }}</li>
                 </ul>
             </div>
         </div>
@@ -37,7 +52,7 @@
             </div>
             <div class="card-body">
                 <p class="text-gray-700">
-                    Tes Seleksi akan dilaksanakan pada <strong>10 Juli 2025</strong> pukul 08:00 WIB di Aula SMAN 1.
+                    Silakan mengumpulkan berkas pendaftaran Anda sebelum <strong>8 Juli 2025</strong>.
                 </p>
             </div>
         </div>

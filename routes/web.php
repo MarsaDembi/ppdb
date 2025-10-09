@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserFileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserProfileController;
 
@@ -26,7 +27,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => ['role:user']], function () {
         // User Profile
         Route::resource('/profile', UserProfileController::class)->except('create', 'store', 'show', 'edit', 'destroy');
+        // user file
+        Route::resource( '/file', UserFileController::class)->except('create', 'store', 'show', 'edit', 'destroy');    
     });
+
+   Route::view('/admin/calon_peserta', 'cms.pages.calon_peserta.index')->name('admin.calon_peserta.index');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

@@ -18,8 +18,8 @@ class UserProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $data = User::with('profile', 'files')->where('id', $user->id)->first();
-
+        $data = User::with('profile', 'file')->where('id', $user->id)->first();
+        
         return view('cms.pages.profile.index', compact('data'));
     }
 
