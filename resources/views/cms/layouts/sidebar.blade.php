@@ -11,7 +11,7 @@
         <div class="navbar-content h-[calc(100vh_-_74px)] py-2.5">
             <ul class="pc-navbar">
 
-                <li class="pc-item {{ Route::is('dashboard') ? 'active' : ''}}">
+                <li class="pc-item {{ Route::is('dashboard') ? 'active' : '' }}">
                     <a href="{{ route('dashboard') }}" class="pc-link">
                         <span class="pc-micon">
                             <i data-feather="home"></i>
@@ -25,36 +25,66 @@
                         <label>Data Peserta</label>
                         <i data-feather="feather"></i>
                     </li>
-                    <li class="pc-item pc-hasmenu {{ Route::is('profile.index') ? 'active' : ''}}">
+                    <li class="pc-item pc-hasmenu {{ Route::is('profile.index') ? 'active' : '' }}">
                         <a href="{{ route('profile.index') }}" class="pc-link">
                             <span class="pc-micon"> <i data-feather="user"></i></span>
                             <span class="pc-mtext">Profil</span>
                         </a>
                     </li>
-                    <li class="pc-item pc-hasmenu {{ Route::is('file.index') ? 'active' : ''}}">
+                    <li class="pc-item pc-hasmenu {{ Route::is('file.index') ? 'active' : '' }}">
                         <a href="{{ route('file.index') }}" class="pc-link">
                             <span class="pc-micon"> <i data-feather="file-text"></i></span>
                             <span class="pc-mtext">Berkas</span>
                         </a>
                     </li>
-            
                 @endhasrole
 
-                @hasrole('admin|kepalasekolah')
+                @hasrole('admin')
                     <li class="pc-item pc-caption">
-                        <label>Laporan</label>
-                        <i data-feather="monitor"></i>
+                        <label>Pendaftaran</label>
                     </li>
-                <li class="pc-item pc-hasmenu">
-                        <a href="" class="nav-link">
-                            <span class="pc-micon"> <i data-feather="lock"></i></span>
-                            <span class="pc-mtext">Calon Peserta</span>
+                    <li class="pc-item pc-hasmenu {{ Route::is('registration.*') ? 'active' : '' }}">
+                        <a href="{{ route('registration.index') }}" class="pc-link">
+                            <span class="pc-micon"> <i data-feather="users"></i></span>
+                            <span class="pc-mtext">Data Peserta</span>
                         </a>
                     </li>
-                    <li class="pc-item pc-hasmenu">
-                        <a href="../pages/login-v1.html" class="pc-link" target="_blank">
-                            <span class="pc-micon"> <i data-feather="lock"></i></span>
+
+                    <li class="pc-item pc-caption">
+                        <label>Master</label>
+                    </li>
+                    <li class="pc-item pc-hasmenu {{ Route::is('school-year.*') ? 'active' : '' }}">
+                        <a href="{{ route('school-year.index') }}" class="pc-link">
+                            <span class="pc-micon"> <i data-feather="calendar"></i></span>
+                            <span class="pc-mtext">Tahun Ajaran</span>
+                        </a>
+                    </li>
+                    <li class="pc-item pc-hasmenu {{ Route::is('announcement.*') ? 'active' : '' }}">
+                        <a href="{{ route('announcement.index') }}" class="pc-link">
+                            <span class="pc-micon"> <i data-feather="volume-2"></i></span>
+                            <span class="pc-mtext">Pengumuman</span>
+                        </a>
+                    </li>
+                @endhasrole
+
+                @hasrole('kepalasekolah')
+                    <li class="pc-item pc-caption">
+                        <label>Laporan</label>
+                    </li>
+                    <li class="pc-item pc-hasmenu {{ Route::is('registration.*') ? 'active' : '' }}">
+                        <a href="{{ route('registration.index') }}" class="pc-link">
+                            <span class="pc-micon"> <i data-feather="users"></i></span>
                             <span class="pc-mtext">Data Peserta</span>
+                        </a>
+                    </li>
+                    
+                    <li class="pc-item pc-caption">
+                        <label>Master</label>
+                    </li>
+                    <li class="pc-item pc-hasmenu {{ Route::is('users.*') ? 'active' : '' }}">
+                        <a href="{{ route('users.index') }}" class="pc-link">
+                            <span class="pc-micon"> <i data-feather="users"></i></span>
+                            <span class="pc-mtext">User</span>
                         </a>
                     </li>
                 @endhasrole

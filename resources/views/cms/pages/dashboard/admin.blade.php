@@ -20,7 +20,7 @@
                             <div class="bg-green-500 h-full rounded-lg transition-all duration-700 ease-in-out"
                                 role="progressbar" style="width: 75%"></div>
                         </div>
-                        <p class="text-sm text-muted mt-2">Sebagian besar sudah melengkapi berkas pendaftaran.</p>
+                        {{-- <p class="text-sm text-muted mt-2">Sebagian besar sudah melengkapi berkas pendaftaran.</p> --}}
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                             <div class="bg-yellow-500 h-full rounded-lg transition-all duration-700 ease-in-out"
                                 role="progressbar" style="width: 50%"></div>
                         </div>
-                        <p class="text-sm text-muted mt-2">Sebagian peserta masih dalam proses verifikasi berkas.</p>
+                        {{-- <p class="text-sm text-muted mt-2">Sebagian peserta masih dalam proses verifikasi berkas.</p> --}}
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                             <div class="bg-blue-500 h-full rounded-lg transition-all duration-700 ease-in-out"
                                 role="progressbar" style="width: 90%"></div>
                         </div>
-                        <p class="text-sm text-muted mt-2">Mayoritas peserta telah diterima dan siap mengikuti pembelajaran.</p>
+                        {{-- <p class="text-sm text-muted mt-2">Mayoritas peserta telah diterima dan siap mengikuti pembelajaran.</p> --}}
                     </div>
                 </div>
             </div>  
@@ -77,7 +77,7 @@
     <div class="col-span-12">
         <div class="card table-card">
             <div class="card-header">
-                <h5>Recent Users</h5>
+                <h5>Pendaftar Terbaru</h5>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -86,106 +86,86 @@
                             <tr class="unread">
                                 <td>
                                     <img class="rounded-full max-w-10" style="width: 40px"
-                                        src="../assets/images/user/avatar-1.jpg" alt="activity-user">
+                                        src="{{ asset('asset/cms/images/user/avatar-1.jpg') }}" alt="activity-user">
                                 </td>
                                 <td>
-                                    <h6 class="mb-1">Isabella Christensen</h6>
-                                    <p class="m-0">Lorem Ipsum is simply dummy text of…</p>
+                                    <h6>Isabella Christensen</h6>
+                                </td>
+                                <td>
+                                    <h6>Paket A</h6>
                                 </td>
                                 <td>
                                     <h6 class="text-muted">
-                                        <i class="fas fa-circle text-success text-[10px] ltr:mr-4 rtl:ml-4"></i>
                                         11 MAY 12:56
                                     </h6>
                                 </td>
-                                <td>
-                                    <a href="#!"
-                                        class="badge bg-theme-bg-2 text-white text-[12px] mx-2">Reject</a>
-                                    <a href="#!" class="badge bg-theme-bg-1 text-white text-[12px]">Approve</a>
-                                </td>
                             </tr>
                             <tr class="unread">
                                 <td>
                                     <img class="rounded-full max-w-10" style="width: 40px"
-                                        src="../assets/images/user/avatar-2.jpg" alt="activity-user">
+                                        src="{{ asset('asset/cms/images/user/avatar-2.jpg') }}" alt="activity-user">
                                 </td>
                                 <td>
                                     <h6 class="mb-1">Mathilde Andersen</h6>
-                                    <p class="m-0">Lorem Ipsum is simply dummy text of…</p>
+                                </td>
+                                <td>
+                                    <h6>Paket A</h6>
                                 </td>
                                 <td>
                                     <h6 class="text-muted">
-                                        <i class="fas fa-circle text-danger text-[10px] ltr:mr-4 rtl:ml-4"></i>
                                         11 MAY 10:35
                                     </h6>
                                 </td>
-                                <td>
-                                    <a href="#!"
-                                        class="badge bg-theme-bg-2 text-white text-[12px] mx-2">Reject</a>
-                                    <a href="#!" class="badge bg-theme-bg-1 text-white text-[12px]">Approve</a>
-                                </td>
                             </tr>
                             <tr class="unread">
                                 <td>
                                     <img class="rounded-full max-w-10" style="width: 40px"
-                                        src="../assets/images/user/avatar-3.jpg" alt="activity-user">
+                                        src="{{ asset('asset/cms/images/user/avatar-3.jpg') }}" alt="activity-user">
                                 </td>
                                 <td>
                                     <h6 class="mb-1">Karla Sorensen</h6>
-                                    <p class="m-0">Lorem Ipsum is simply dummy text of…</p>
+                                </td>
+                                <td>
+                                    <h6>Paket C</h6>
                                 </td>
                                 <td>
                                     <h6 class="text-muted">
-                                        <i class="fas fa-circle text-success text-[10px] ltr:mr-4 rtl:ml-4"></i>
                                         9 MAY 17:38
                                     </h6>
                                 </td>
-                                <td>
-                                    <a href="#!"
-                                        class="badge bg-theme-bg-2 text-white text-[12px] mx-2">Reject</a>
-                                    <a href="#!" class="badge bg-theme-bg-1 text-white text-[12px]">Approve</a>
-                                </td>
                             </tr>
                             <tr class="unread">
                                 <td>
                                     <img class="rounded-full max-w-10" style="width: 40px"
-                                        src="../assets/images/user/avatar-1.jpg" alt="activity-user">
+                                        src="{{ asset('asset/cms/images/user/avatar-4.jpg') }}" alt="activity-user">
                                 </td>
                                 <td>
                                     <h6 class="mb-1">Ida Jorgensen</h6>
-                                    <p class="m-0">Lorem Ipsum is simply dummy text of…</p>
+                                </td>
+                                <td>
+                                    <h6>Paket B</h6>
                                 </td>
                                 <td>
                                     <h6 class="text-muted f-w-300">
-                                        <i class="fas fa-circle text-danger text-[10px] ltr:mr-4 rtl:ml-4"></i>
                                         19 MAY 12:56
                                     </h6>
-                                </td>
-                                <td>
-                                    <a href="#!"
-                                        class="badge bg-theme-bg-2 text-white text-[12px] mx-2">Reject</a>
-                                    <a href="#!" class="badge bg-theme-bg-1 text-white text-[12px]">Approve</a>
                                 </td>
                             </tr>
                             <tr class="unread">
                                 <td>
                                     <img class="rounded-full max-w-10" style="width: 40px"
-                                        src="../assets/images/user/avatar-2.jpg" alt="activity-user">
+                                        src="{{ asset('asset/cms/images/user/avatar-5.jpg') }}" alt="activity-user">
                                 </td>
                                 <td>
                                     <h6 class="mb-1">Albert Andersen</h6>
-                                    <p class="m-0">Lorem Ipsum is simply dummy text of…</p>
+                                </td>
+                                <td>
+                                    <h6>Paket B</h6>
                                 </td>
                                 <td>
                                     <h6 class="text-muted">
-                                        <i class="fas fa-circle text-success text-[10px] ltr:mr-4 rtl:ml-4"></i>
                                         21 July 12:56
                                     </h6>
-                                </td>
-                                <td>
-                                    <a href="#!"
-                                        class="badge bg-theme-bg-2 text-white text-[12px] mx-2">Reject</a>
-                                    <a href="#!" class="badge bg-theme-bg-1 text-white text-[12px]">Approve</a>
                                 </td>
                             </tr>
                         </tbody>
