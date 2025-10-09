@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('birth_certificate')->nullable();
             $table->string('school_certificate')->nullable();
             $table->string('transfer_letter')->nullable();
+            $table->string('proof_payment')->nullable();
             $table->timestamps();
         });
     }

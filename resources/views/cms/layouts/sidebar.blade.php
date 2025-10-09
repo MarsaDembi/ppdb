@@ -27,14 +27,14 @@
                     </li>
                     <li class="pc-item pc-hasmenu {{ Route::is('profile.index') ? 'active' : ''}}">
                         <a href="{{ route('profile.index') }}" class="pc-link">
-                            <span class="pc-micon"> <i data-feather="edit"></i></span>
-                            <span class="pc-mtext">Profile</span>
+                            <span class="pc-micon"> <i data-feather="user"></i></span>
+                            <span class="pc-mtext">Profil</span>
                         </a>
                     </li>
                     <li class="pc-item pc-hasmenu {{ Route::is('file.index') ? 'active' : ''}}">
                         <a href="{{ route('file.index') }}" class="pc-link">
-                            <span class="pc-micon"> <i data-feather="type"></i></span>
-                            <span class="pc-mtext">Persyaratan</span>
+                            <span class="pc-micon"> <i data-feather="file-text"></i></span>
+                            <span class="pc-mtext">Berkas</span>
                         </a>
                     </li>
             

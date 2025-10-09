@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PPDB PKBM Bela Warga</title>
-    
+
     <link rel="icon" href="{{ asset('asset/images/favicon.svg') }}" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('asset/images/logo/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('asset/images/logo/favicon-32x32.png') }}">
@@ -194,14 +194,14 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                     <!-- About Images -->
                     <div class="animate_left xc gn gg jn/2 i">
                         <div>
-                            <img src="images/shape-05.svg" alt="Shape" class="h -ud-left-5 x" />
-                            <img src="images/about-01.png" alt="About" class="ib" />
-                            <img src="images/about-02.png" alt="About" />
+                            <img src="{{ asset('asset/images/shape-05.svg') }}" alt="Shape" class="h -ud-left-5 x" />
+                            <img src="{{ asset('asset/images/logo-pkbm.png') }}" alt="About" class="ib" />
+                            <img src="{{ asset('asset/images/logo-pkbm.png') }}" alt="About" />
                         </div>
                         <div>
-                            <img src="images/shape-06.svg" alt="Shape" />
-                            <img src="images/about-03.png" alt="About" class="ob gb" />
-                            <img src="images/shape-07.svg" alt="Shape" class="bb" />
+                            <img src="{{ asset('asset/images/shape-06.svg') }}" alt="Shape" />
+                            <img src="{{ asset('asset/images/logo-pkbm.png') }}" alt="About" class="ob gb" />
+                            <img src="{{ asset('asset/images/shape-07.svg') }}" alt="Shape" class="bb" />
                         </div>
                     </div>
 
@@ -220,6 +220,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                     </div>
                 </div>
         </section>
+
         <section id="features" class="py-16 md:py-20 lg:py-24">
             <div class="bb ze ki yn 2xl:ud-px-12.5 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Grid 4 elemen -->
@@ -304,7 +305,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
 
                         <div class="fb">
                             <h4 class="wj kk wm cc">Email</h4>
-                            <p><a href="#!">support@startup.com</a></p>
+                            <p><a href="mailto: pkbmbelawarga01@gmail.com" target="_blank">pkbmbelawarga01@gmail.com</a></p>
                         </div>
                         <div class="fb">
                             <h4 class="wj kk wm cc">alamat</h4>
@@ -312,7 +313,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                         </div>
                         <div class="fb">
                             <h4 class="wj kk wm cc">No Telp</h4>
-                            <p><a href="#!">+009 8754 3433 223</a></p>
+                            <p><a href="https://wa.me/62895331375113" target="_blank">+62895-3313-75113</a></p>
                         </div>
 
                         <span class="rc nd rh tm lc fb"></span>
@@ -325,12 +326,12 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                             <div class="tc sf yo ap zf ep qb">
                                 <div class="vd to/2">
                                     <label class="rc ac" for="fullname">Nama</label>
-                                    <input type="text" name="fullname" id="fullname" placeholder="Devid Wonder"
+                                    <input type="text" name="fullname" id="fullname" placeholder="Nama Lengkap"
                                         class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
                                 </div>
 
                                 <div class="vd to/2">
-                                    <label class="rc ac" for="email">Alamat</label>
+                                    <label class="rc ac" for="email">Email</label>
                                     <input type="email" name="email" id="email"
                                         placeholder="example@gmail.com"
                                         class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
@@ -340,7 +341,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                             <div class="tc sf yo ap zf ep qb">
                                 <div class="vd to/2">
                                     <label class="rc ac" for="phone">No Telp</label>
-                                    <input type="text" name="phone" id="phone" placeholder="+009 3342 3432"
+                                    <input type="text" name="phone" id="phone" placeholder="+6281 3342 3432"
                                         class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" />
                                 </div>
 

@@ -13,6 +13,7 @@ class UserFile extends Model
         'birth_certificate',
         'school_certificate',
         'transfer_letter',
+        'proof_payment',
     ];
 
     public function user()

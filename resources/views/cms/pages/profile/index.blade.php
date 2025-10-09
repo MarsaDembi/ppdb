@@ -1,5 +1,5 @@
 
-@extends('cms.layouts.main', ['title' => 'Profile'])
+@extends('cms.layouts.main', ['title' => 'Profil'])
 @section('content')
     <!-- [ breadcrumb ] start -->
     <div class="page-header">
@@ -9,7 +9,7 @@
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item" aria-current="page">Profile</li>
+                <li class="breadcrumb-item" aria-current="page">Profil</li>
             </ul>
         </div>
     </div>
@@ -19,7 +19,7 @@
     <div class="col-span-12">
         <div class="card">
             <div class="card-header">
-                <h5>Form Detail Profile</h5>
+                <h5>Form Detail Profil</h5>
             </div>
             <form action="{{ route('profile.update', $data->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -224,9 +224,9 @@
 
                                 <div class="mt-2">
                                     <img id="photo-preview"
-                                        src="{{ $data->profile->photo ? route('getImage', ['path' => 'profile', 'imageName' => $data->profile->photo]) : '' }}"
+                                        src="{{ $data->profile->photo ? route('getImage', ['path' => 'profile', 'imageName' => $data->profile->photo]) : asset('asset/cms/images/user/avatar-2.jpg') }}"
                                         alt="Preview Foto"
-                                        style="max-width: 150px; max-height: 150px; " {{ $data->profile->photo ? '' : ' display:none;' }}">
+                                        style="max-width: 150px; max-height: 150px; {{ $data->profile->photo ? '' : ' display:none;' }}">
                                 </div>
                             </div>
                         </div>

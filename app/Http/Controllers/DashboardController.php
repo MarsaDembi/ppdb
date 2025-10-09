@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 
@@ -26,6 +28,9 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('cms.dashboard');
+        $user = Auth::user();
+        $data = User::with('profile', 'file')->where('id', $user->id)->first();
+        
+        return view('cms.dashboard', compact('data'));
     }
 }
